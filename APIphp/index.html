@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <H1>Testing API</H1>      
+    </head>
+
+    <body>
+        <div id="indexpage">
+            <form id="loginform" autoComplete="off">
+                <div className="formgroup">
+                    <label for="username">Username</label>
+                    <input value="whoryou" type="text" placeholder="Username" id="username"></input>
+                </div>
+
+                <div className="formgroup">
+                    <label for="password">Password</label>
+                    <input value="Iamu" type="text" placeholder="Password" id="password"></input>    
+                </div>
+                <button type="button" onclick="postLogin()">Enter</button>
+                <button type="button" onclick="openRegister()">Register</button>
+            </form>
+        </div>
+
+        <div id="registerpage" style="display: none;">
+            <form id = "registerform" autocomplete = "off">
+                <div className="formgroup">
+                    <label for="firstname">First Name</label>
+                    <input value="you" type="text" placeholder="First Name" id="FirstName"></input>
+                </div>
+
+                <div className="formgroup">
+                    <label for="lastname">Last Name</label>
+                    <input value="me" type="text" placeholder="Last Name" id="LastName"></input>    
+                </div>  
+
+                <div className="formgroup">
+                    <label for="dateofbirth">Date Of Birth</label>
+                    <input value="1990-02-16" type="text" placeholder="Date Of Birth" id="DateOfBirth"></input>    
+                </div>
+
+                <div className="formgroup">
+                    <label for="email">Email</label>
+                    <input value="A@gmail.com" type="text" placeholder="Email" id="Email"></input>    
+                </div>
+
+                <div className="formgroup">
+                    <label for="Phone">Mobile Phone</label>
+                    <input value="02132454989" type="text" placeholder="Phone" id="Phone"></input>    
+                </div>
+
+                <div className="formgroup">
+                    <label for="username">Username</label>
+                    <input value="whoryou" type="text" placeholder="Username" id="UsernameReg"></input>
+                </div>
+
+                <div className="formgroup">
+                    <label for="password">Password</label>
+                    <input value="Iamu" type="text" placeholder="Password" id="PasswordReg"></input>    
+                </div>
+                <button type="button" onclick="postRegister()">Submit</button>
+                <button type="button" onclick="openLogin()">Go Back</button>
+        </div>
+        
+        <div id="mainpage" style="display: none;">
+            <h1>the main page</h1>
+            <div id="profilesection"></div>
+            <button type="button" onclick="openUpdate()">Update Account</button>
+            <div id="delete-profile">
+                <button type="button" onclick="postDeleteProfile()">Delete Account</button>
+            </div>
+            <button type="button" onclick="openMovies();postDisplayMovies()">Movies</button>
+            <button type="button" onclick="openFavourites();postDisplayFavouriteMovie()">Favourites</button>
+            <button type="button" onclick="postLogOut()">Logout</button>
+            <button type="button" onclick="openYourTicket();postDisplayTicket()">Your Ticket</button>
+        </div>
+
+        <div id="updatepage" style="display:none;">
+            <h1>Profile Update</h1>
+            <form id="updateform" autocomplete="off">
+                <div className="formgroup">
+                    <label for="firstname">First Name</label>
+                    <input value="you" type="text" placeholder="First Name" id="FirstNameUpd"></input>
+                </div>
+
+                <div className = "formgroup">
+                    <label for = "lastname">Last Name</label>
+                    <input value = "me" type = "text" placeholder = "Last Name" id = "LastNameUpd"></input>    
+                </div>  
+
+                <div className = "formgroup">
+                    <label for = "dateofbirth">Date Of Birth</label>
+                    <input value = "1990-02-16" type = "text" placeholder = "Date Of Birth" id = "DateOfBirthUpd"></input>    
+                </div>
+
+                <div className="formgroup">
+                    <label for="email">Email</label>
+                    <input value="A@gmail.com" type="text" placeholder="Email" id="EmailUpd"></input>    
+                </div>
+
+                <div className="formgroup">
+                    <label for="Phone">Mobile Phone</label>
+                    <input value="02132454989" type="text" placeholder="Phone" id="PhoneUpd"></input>    
+                </div>
+
+                <div className="formgroup">
+                    <label for="username">Username</label>
+                    <input value="whoryou" type="text" placeholder="Username" id="UsernameUpd"></input>
+                </div>
+
+                <div className="formgroup">
+                    <label for="password">Password</label>
+                    <input value="Iamu" type="text" placeholder="Password" id="PasswordUpd"></input>    
+                </div>
+                <button type="button" onclick="postUpdateProfile()">Submit</button>
+                <button type="button" onclick="openProfile()">Go Back</button>
+        </div>
+
+        <div id="moviepage" style="display: none;">
+            <h1>Movies</h1>
+            <h3>A bunch of movies</h3>
+            <div id="moviecontents"></div>
+        </div>
+
+        <div id ="favouritelistpage" style="display: none;">
+            <h1>Favourite Movie List</h1>
+            <div id="favourite-list"></div>    
+        </div>
+        
+        <div id="moviesessionpage" style="display: none;">
+            <h1>Sessions Available</h1>
+            <h3>A bunch of session below</h3>
+            <div id="sessioncontents"></div>
+        </div>
+
+        <div id="seatspage" style="display: none;">
+            <h1>Seats Available</h1>
+            <h3>A bunch of seats below</h3>
+            <div id="seatlist"></div>
+            <div id="tickettype"></div>
+            <form id="seat-booking">
+                <input id="seat-id" value="" style="display: none;">
+                <input id="ticket-type" value="" style="display: none;">
+                <div id="ticket-note"></div>  
+                <button type="button" onclick="postSeatBooking()">Reserve</button>  
+            </form>
+        </div>
+
+        <div id="ticketpage" style="display: none">
+            <h1>Your Booked Ticket</h1>
+            <div id="ticketcontent"></div>
+        </div>
+
+        <div id="updateticketpage" style="display: none">
+            <h1>Choose Your New Session</h1>
+            <div id="ticketupdate"></div>
+        </div>
+
+        <div id="updateseatpage" style="display: none">
+            <h1>Seats Available</h1>
+            <h3>A bunch of seats below</h3>
+            <div id="seatlist-updt"></div>
+            <form id="seat-update">
+                <input id="ticket-id" value="" style="display: none;">
+                <input id="seat-id-update" value="" style="display: none;">  
+                <button type="button" onclick="postUpdateTicket();openYourTicket();">Update</button>  
+            </form>
+        </div>
+
+        <script src="script.js"></script>  
+    </body>
+</html>
